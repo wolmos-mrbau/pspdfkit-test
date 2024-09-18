@@ -1,0 +1,13 @@
+<div #main id="main">
+  <aca-splitpane id="splitPaneMain" (dragStartEvent)="dragStartEvent()" (dragEndEvent)="dragEndEvent()">
+    <ng-container ngProjectAs="[splitAreaUpperLeft]">
+      <app-component1></app-component1>
+    </ng-container>
+    <ng-container ngProjectAs="[splitAreaLowerLeft]">
+      <app-component2></app-component2>
+    </ng-container>
+    <ng-container ngProjectAs="[splitAreaUpperRight]">
+      <aca-pdfpreview [fileSelectData]="fileSelectData" [dragging]="dragging"></aca-pdfpreview>
+    </ng-container>]
+  </aca-splitpane>
+</div>

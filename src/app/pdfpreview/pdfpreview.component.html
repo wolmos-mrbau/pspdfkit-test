@@ -1,0 +1,18 @@
+<div id="pdf-container">
+  <div>
+    <mat-button-toggle-group [value]="useViewer" aria-label="Favorite Color" (valueChange)="onViewerChanged($event)">
+      <mat-button-toggle value="pspdfkit">PspdfKit</mat-button-toggle>
+      <mat-button-toggle value="browser">Browser</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  <div *ngIf='(fileSelectData==null || dragging)'>
+    <div class="center">
+      <img class="preview-icon" src="./assets/images/ft_ic_pdf.svg" alt="PDF Icon" width="500px">
+      <p class="preview-text">Document Preview</p>
+    </div>
+  </div>
+  <div id="pdf-viewer">
+    <aca-pdfbrowser *ngIf="isPDFFile && useViewer=='browser'" [hidden]="(dragging)" [fileSelectData]="fileSelectData" id="pdf-frame"></aca-pdfbrowser>
+    <aca-pdfpspdfkit *ngIf="isPDFFile && useViewer=='pspdfkit'" [hidden]="(dragging)" [fileSelectData]="fileSelectData"></aca-pdfpspdfkit>
+  </div>
+</div>
