@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   dragging = false;
   fileSelectData = "assets/test.pdf";
+  
   dragStartEvent(){
     // workaround: hide pdf viewer during split pane resize
     this.dragging = true;
@@ -18,4 +19,7 @@ export class AppComponent {
     this.dragging = false;
   }
 
+  onClickEvent(name:string) {
+    this.fileSelectData="assets/"+name;
+  }
 }

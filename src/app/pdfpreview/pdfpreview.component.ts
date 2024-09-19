@@ -8,6 +8,7 @@ import { Component, Input } from '@angular/core';
 export class PdfpreviewComponent {
   isPDFFile = true;
   private _dragging : boolean;
+  
   @Input() fileSelectData : string = null;
   @Input() set dragging(val : boolean) {
     this._dragging = val;
@@ -20,9 +21,7 @@ export class PdfpreviewComponent {
   }
 
   constructor() {
-
   }
-
 
   useViewer : string = 'pspdfkit';
   //useViewer : string = 'browser';
