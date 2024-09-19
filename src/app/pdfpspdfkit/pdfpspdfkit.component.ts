@@ -35,6 +35,7 @@ export class PdfpspdfkitComponent implements OnChanges {
     this.unloadPdf();
     PSPDFKit.load({
       // Use the assets directory URL as a base URL. PSPDFKit will download its library assets from here.
+      useIframe: true,
       baseUrl: location.protocol + "//" + location.host + "/assets/",
       document: url,
       container: this.pspdfkitContainer,
